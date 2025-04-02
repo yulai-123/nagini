@@ -7,10 +7,10 @@ from routers.main_router import main_router
 from routers.menu_router import menu_router
 from routers.state_router import state_router
 from config import TELEGRAM_BOT_TOKEN
-
+from aiogram.client.default import DefaultBotProperties
 
 async def main():
-    bot = Bot(token=TELEGRAM_BOT_TOKEN, parse_mode=ParseMode.MARKDOWN)
+    bot = Bot(token=TELEGRAM_BOT_TOKEN, default=DefaultBotProperties(parse_mode=ParseMode.MARKDOWN))
     dp = Dispatcher()
     dp.include_router(main_router)
     dp.include_router(menu_router)
