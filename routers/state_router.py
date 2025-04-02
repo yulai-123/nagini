@@ -146,6 +146,7 @@ async def contrace_swap_handler(message: Message, state: FSMContext) -> None:
     # 此处获取 token info 存在 cloudscraper 阻碍
     token_info = await TokenInfo.get_token_info(token_address)
     # token_info = {}
+    print("token_info: ", token_info)
     await state.update_data(token_info=token_info)
     await state.update_data(token_address=token_address)
     await state.update_data(account_token_info=account_token_info)
