@@ -3,11 +3,11 @@ from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
 def make_settings_menu():
     return InlineKeyboardMarkup(inline_keyboard=[
-        [InlineKeyboardButton(text="账户设置", callback_data="account_settings")],
-        [InlineKeyboardButton(text="安全设置", callback_data="security_settings")],
+        [InlineKeyboardButton(text="Account Setting", callback_data="account_settings")],
+        [InlineKeyboardButton(text="Security Seeting", callback_data="security_settings")],
         [InlineKeyboardButton(
-            text="通知设置", callback_data="notification_settings")],
-        [InlineKeyboardButton(text="⬅️ 返回", callback_data="main_menu")]
+            text="Notification Setting", callback_data="notification_settings")],
+        [InlineKeyboardButton(text="⬅️ Go Back", callback_data="main_menu")]
     ])
 
 

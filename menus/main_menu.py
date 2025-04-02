@@ -3,21 +3,21 @@ from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup, ReplyKeybo
 
 def make_main_menu_keyboard():
     wallet_btn = InlineKeyboardButton(
-        text="钱包 (Wallet)", callback_data="wallet_menu")
+        text="Wallet", callback_data="wallet_menu")
     trade_btn = InlineKeyboardButton(
-        text="交易 (Trade)", callback_data="trade_menu")
+        text="Trade", callback_data="trade_menu")
     strategy_btn = InlineKeyboardButton(
-        text="策略 (Strategy)", callback_data="strategy_menu")
+        text="Strategy", callback_data="strategy_menu")
     bots_btn = InlineKeyboardButton(
-        text="机器人 (Bots)", callback_data="bots_menu")
+        text="Bots", callback_data="bots_menu")
     lp_farming_btn = InlineKeyboardButton(
-        text="流动性挖矿 (LP Farming)", callback_data="lp_farming_menu")
+        text="LP Farming", callback_data="lp_farming_menu")
     referral_btn = InlineKeyboardButton(
-        text="推荐 (Referral)", callback_data="referral_menu")
+        text="Referral", callback_data="referral_menu")
     settings_btn = InlineKeyboardButton(
-        text="⚙️ 设置 (Settings)", callback_data="settings_menu")
+        text="⚙️ Settings", callback_data="settings_menu")
     token_btn = InlineKeyboardButton(
-        text="AI代币分析 (AI Token Analysis)", callback_data="ask_token")
+        text="AI Token Analysis", callback_data="ask_token")
 
     return InlineKeyboardMarkup(inline_keyboard=[
         [wallet_btn, trade_btn],

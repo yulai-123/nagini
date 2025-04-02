@@ -3,10 +3,10 @@ from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
 def make_referral_menu():
     return InlineKeyboardMarkup(inline_keyboard=[
-        [InlineKeyboardButton(text="推荐链接", callback_data="referral_link")],
-        [InlineKeyboardButton(text="推荐奖励", callback_data="referral_rewards")],
-        [InlineKeyboardButton(text="历史记录", callback_data="referral_history")],
-        [InlineKeyboardButton(text="⬅️ 返回", callback_data="main_menu")]
+        [InlineKeyboardButton(text="Referral Link", callback_data="referral_link")],
+        [InlineKeyboardButton(text="Referral Rewards", callback_data="referral_rewards")],
+        [InlineKeyboardButton(text="Referral History", callback_data="referral_history")],
+        [InlineKeyboardButton(text="⬅️ Go Back", callback_data="main_menu")]
     ])
 
 

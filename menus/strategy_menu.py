@@ -5,7 +5,7 @@ def make_strategy_menu():
     return InlineKeyboardMarkup(inline_keyboard=[
         [InlineKeyboardButton(text="Strategy 1", callback_data="strategy1")],
         [InlineKeyboardButton(text="Strategy 2", callback_data="strategy2")],
-        [InlineKeyboardButton(text="⬅️ 返回", callback_data="main_menu")]
+        [InlineKeyboardButton(text="⬅️ Go Back", callback_data="main_menu")]
     ])
 
 

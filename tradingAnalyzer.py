@@ -144,7 +144,7 @@ class TradingAnalyzer:
         # 设置图表样式
         self.fig.update_layout(
             title=f"OKX: {self.symbol} {self.period} KLine.",
-            xaxis_title="时间",
+            xaxis_title="Time",
             xaxis_rangeslider_visible=False,
             template="plotly_dark",
             height=900,
@@ -159,7 +159,7 @@ class TradingAnalyzer:
             high=self.df["High"],
             low=self.df["Low"],
             close=self.df["Close"],
-            name="K线",
+            name="K Line",
             increasing_line_color='red',
             decreasing_line_color='green'
         ), row=1, col=1)
@@ -217,7 +217,7 @@ class TradingAnalyzer:
         ), row=2, col=1)
 
         # 添加超买超卖线
-        for level, name, color in [(70, '超买线 (70)', 'red'), (30, '超卖线 (30)', 'green')]:
+        for level, name, color in [(70, 'Overbought (70)', 'red'), (30, 'Oversold (30)', 'green')]:
             self.fig.add_trace(go.Scatter(
                 x=self.df.index,
                 y=[level] * len(self.df),
@@ -255,7 +255,7 @@ class TradingAnalyzer:
             self.fig, format="png", width=1920, height=1080, scale=2)
         with open(file_path, "wb") as f:
             f.write(img_bytes)
-        print(f"图表已保存为 {file_path}")
+        print(f"Chart saved as {file_path}")
 
     def get_gpt_analysis(self):
         """获取GPT分析结果"""
@@ -313,7 +313,7 @@ class TradingAnalyzer:
 
             return response.choices[0].message.content
         except Exception as e:
-            print(f"分析过程中出现错误: {e}")
+            print(f"Error during analysis: {e}")
             return None
 
     def analyze(self, show_chart=True):
@@ -337,11 +337,11 @@ class TradingAnalyzer:
         """查看可用的模型列表"""
         try:
             models = self.client.models.list()
-            print("可用的模型列表：")
+            print("Available models:")
             for model in models:
                 print(f"- {model.id}")
         except Exception as e:
-            print(f"获取模型列表时出错: {e}")
+            print(f"Error getting model list: {e}")
 
 
 # # 初始化分析器（需要OpenAI API密钥）

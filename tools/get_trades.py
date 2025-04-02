@@ -73,13 +73,13 @@ def main():
         tx_details = get_transaction_details(tx_signature)
         slot, beijing_time, transfers = parse_token_transfers(tx_details)
 
-        print(f"\n📌 交易哈希: {tx_signature}")
-        print(f"⏳ 区块高度: {slot}")
-        print(f"🕒 交易时间 (北京时间): {beijing_time}")
-        print("🔄 代币兑换详情:")
+        print(f"\n📌 Transaction Signature: {tx_signature}")
+        print(f"⏳ Block: {slot}")
+        print(f"🕒 Transaction time (Beijing time): {beijing_time}")
+        print("🔄 Token Transfer Details:")
         
         for owner, mint, amount in transfers:
-            print(f"  - 钱包 {owner} 变动了 {amount} 枚代币 ({mint})")
+            print(f"  - Wallet {owner} changed by {amount} tokens ({mint})")
 
 if __name__ == "__main__":
     main()

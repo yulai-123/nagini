@@ -5,7 +5,7 @@ def make_bots_menu():
     return InlineKeyboardMarkup(inline_keyboard=[
         [InlineKeyboardButton(text="GMGN Bot", callback_data="gmgn_bot")],
         [InlineKeyboardButton(text="AVE Bot", callback_data="ave_bot")],
-        [InlineKeyboardButton(text="⬅️ 返回", callback_data="main_menu")]
+        [InlineKeyboardButton(text="⬅️ Go Back", callback_data="main_menu")]
     ])
 
 

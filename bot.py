@@ -17,15 +17,15 @@ async def main():
     dp.include_router(state_router)
 
     commands = [
-        types.BotCommand(command="start", description="启动机器人"),
-        types.BotCommand(command="show_wallet_menu", description="显示钱包菜单"),
-        types.BotCommand(command="show_trade_menu", description="显示交易菜单"),
-        types.BotCommand(command="show_strategy_menu", description="显示策略菜单"),
-        types.BotCommand(command="show_bots_menu", description="显示机器人菜单"),
+        types.BotCommand(command="start", description="Start the bot"),
+        types.BotCommand(command="show_wallet_menu", description="Show wallet menu"),
+        types.BotCommand(command="show_trade_menu", description="Show trading menu"),
+        types.BotCommand(command="show_strategy_menu", description="Show strategy menu"),
+        types.BotCommand(command="show_bots_menu", description="Show bots menu"),
         types.BotCommand(command="show_lp_farming_menu",
-                         description="显示流动性挖矿菜单"),
-        types.BotCommand(command="show_referral_menu", description="显示推荐菜单"),
-        types.BotCommand(command="show_settings_menu", description="显示设置菜单")
+                         description="Show liquidity farming menu"),
+        types.BotCommand(command="show_referral_menu", description="Show referral menu"),
+        types.BotCommand(command="show_settings_menu", description="Show settings menu")
     ]
     await bot.set_my_commands(commands)
 

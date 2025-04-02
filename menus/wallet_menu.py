@@ -3,18 +3,18 @@ from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
 def make_wallet_menu():
     return InlineKeyboardMarkup(inline_keyboard=[
-        [InlineKeyboardButton(text="默认钱包 (Default Wallet)",
+        [InlineKeyboardButton(text="Default Wallet",
                               callback_data="show_default_wallet")],
-        [InlineKeyboardButton(text="设置默认钱包", callback_data="set_default_wallet"), InlineKeyboardButton(
-            text="重置默认钱包", callback_data="reset_default_wallet")],
-        [InlineKeyboardButton(text="狙击钱包 (Sniper Wallet)",
+        [InlineKeyboardButton(text="Set Default Wallet", callback_data="set_default_wallet"), InlineKeyboardButton(
+            text="Reset Default Wallet", callback_data="reset_default_wallet")],
+        [InlineKeyboardButton(text="Sniper Wallet (Sniper Wallet)",
                               callback_data="show_sniper_wallet")],
-        [InlineKeyboardButton(text="设置狙击钱包", callback_data="set_sniper_wallet"), InlineKeyboardButton(
-            text="重置狙击钱包", callback_data="reset_sniper_wallet")],
-        [InlineKeyboardButton(text="余额 (Balance)", callback_data="balance"), InlineKeyboardButton(
-            text="存款 (Deposit)", callback_data="deposit")],
-        [InlineKeyboardButton(text="提款 (Withdraw)", callback_data="withdraw"),
-         InlineKeyboardButton(text="⬅️ 返回", callback_data="main_menu")]
+        [InlineKeyboardButton(text="Set Sniper Wallet", callback_data="set_sniper_wallet"), InlineKeyboardButton(
+            text="Reset Sniper Wallet", callback_data="reset_sniper_wallet")],
+        [InlineKeyboardButton(text="Balance", callback_data="balance"), InlineKeyboardButton(
+            text="Deposit", callback_data="deposit")],
+        [InlineKeyboardButton(text="Withdraw", callback_data="withdraw"),
+         InlineKeyboardButton(text="⬅️ Go Back", callback_data="main_menu")]
     ])
 
 

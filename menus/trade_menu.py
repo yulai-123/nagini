@@ -1,4 +1,5 @@
 from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup
+from tools.okx import generate_okx_deeplink
 
 
 def make_trade_menu():
@@ -8,7 +9,7 @@ def make_trade_menu():
         [InlineKeyboardButton(text="Position", callback_data="search_position"), InlineKeyboardButton(
             text="Copy Trade", callback_data="copy_trade")],
         [InlineKeyboardButton(text="Limit Orders", callback_data="limit_orders"),
-         InlineKeyboardButton(text="⬅️ 返回", callback_data="main_menu")]
+         InlineKeyboardButton(text="⬅️ Go Back", callback_data="main_menu")]
     ])
 
 
@@ -19,7 +20,7 @@ def go_back_trade_btn() -> None:
     return go_back_keyboard
 
 
-def make_swap_menu():
+async def make_swap_menu(state=None):
     buy_0_25_btn = InlineKeyboardButton(
         text="Buy 0.05 SoL", callback_data="buy_0.05")
     buy_0_5_btn = InlineKeyboardButton(
@@ -39,10 +40,17 @@ def make_swap_menu():
         text="Sell _ %", callback_data="sell_option")
     set_slippage_btn = InlineKeyboardButton(
         text="Set Slippage", callback_data="set_slippage")
+    # 如果有state参数，尝试获取token_address
+    token_address = ""
+    if state:
+        data = await state.get_data()
+        token_address = data.get("token_address", "")
+    use_okx_wallet_btn = InlineKeyboardButton(
+        text="Use OKX Wallet Swap", url=generate_okx_deeplink(token_address))
     main_menu_btn = InlineKeyboardButton(
         text="Main Menu", callback_data="main_menu")
     swap_keyboard = InlineKeyboardMarkup(inline_keyboard=[[buy_0_25_btn, buy_0_5_btn, buy_1_0_btn, buy_option_btn], [
-                                         sell_0_25_btn, sell_0_5_btn, sell_1_0_btn, sell_option_btn], [set_slippage_btn], [main_menu_btn]])
+                                         sell_0_25_btn, sell_0_5_btn, sell_1_0_btn, sell_option_btn], [set_slippage_btn], [use_okx_wallet_btn], [main_menu_btn]])
     return swap_keyboard
 
 

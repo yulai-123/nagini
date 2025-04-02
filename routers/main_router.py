@@ -28,9 +28,9 @@ async def command_start(message: Message, state: FSMContext) -> None:
             referrer_id = int(args[0].split('_')[1])
             # 添加推荐关系
             await insert_referral(referrer_id, userId)
-            await message.answer(f'🎉 你通过推荐链接加入！推荐者ID: {referrer_id}')
+            await message.answer(f'🎉 You joined through a referral link! Referrer ID: {referrer_id}')
         else:
-            await message.answer('👋 欢迎使用本 Bot！')
+            await message.answer('👋 Welcome to this Bot!')
         await insert_user(user_id=userId, default_wallet_address="", default_private_key="",
                           sniper_wallet_address="", sniper_private_key="",
                           trades="", slippage=10, monitor_wallet="")

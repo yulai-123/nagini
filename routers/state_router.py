@@ -145,6 +145,7 @@ async def contrace_swap_handler(message: Message, state: FSMContext) -> None:
     print("account_token_: ", token_mint_addresss)
     # 此处获取 token info 存在 cloudscraper 阻碍
     token_info = await TokenInfo.get_token_info(token_address)
+    # token_info = {}
     await state.update_data(token_info=token_info)
     await state.update_data(token_address=token_address)
     await state.update_data(account_token_info=account_token_info)
@@ -174,7 +175,8 @@ async def contrace_swap_handler(message: Message, state: FSMContext) -> None:
     # swapText = "等待替换为 gmgn 的合约详情数据，目前获取合约的请求被 cloudscraper 阻碍"
     # Use the correct context to reply
 
-    await message.answer(f"{swapText}", reply_markup=swap_menu_keyboard, parse_mode=ParseMode.MARKDOWN, disable_web_page_preview=True)
+    keyboard = await make_swap_menu(state)
+    await message.answer(f"{swapText}", reply_markup=keyboard, parse_mode=ParseMode.MARKDOWN, disable_web_page_preview=True)
     await state.set_state(Form.buy_token)
 
 

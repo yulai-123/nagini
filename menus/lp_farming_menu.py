@@ -3,10 +3,10 @@ from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
 def make_lp_farming_menu():
     return InlineKeyboardMarkup(inline_keyboard=[
-        [InlineKeyboardButton(text="查看收益", callback_data="view_earnings")],
-        [InlineKeyboardButton(text="添加流动性", callback_data="add_liquidity")],
-        [InlineKeyboardButton(text="移除流动性", callback_data="remove_liquidity")],
-        [InlineKeyboardButton(text="⬅️ 返回", callback_data="main_menu")]
+        [InlineKeyboardButton(text="View Earnings", callback_data="view_earnings")],
+        [InlineKeyboardButton(text="Add Liquidity", callback_data="add_liquidity")],
+        [InlineKeyboardButton(text="Remove Liquidity", callback_data="remove_liquidity")],
+        [InlineKeyboardButton(text="⬅️ Go Back", callback_data="main_menu")]
     ])
 
 
