@@ -20,12 +20,9 @@ def make_main_menu_keyboard():
         text="AI Token Analysis", callback_data="ask_token")
 
     return InlineKeyboardMarkup(inline_keyboard=[
-        [wallet_btn, trade_btn],
-        [strategy_btn],
-        [bots_btn],
-        [lp_farming_btn],
-        [referral_btn, settings_btn],
-        [token_btn]
+        [token_btn, trade_btn],
+        [lp_farming_btn, referral_btn],
+        [settings_btn, wallet_btn],
     ])
 
 

@@ -25,12 +25,14 @@ async def swap_handler(message: Message, state: FSMContext) -> None:
     data = await state.get_data()
     userId = data.get("userId")
     userData = await get_user(user_id=userId)
-    if userData.get("default_private_key") == "":
-        await message.edit_text("Please set your wallet first", reply_markup=go_back_trade)
-    else:
-        await message.edit_text("Please Enter The Contract Address of the Token You Want to Buy")
-        # 假设这是等待输入购买代币地址的状态
-        await state.set_state(Form.waiting_for_contrace_address)
+    await message.edit_text("Please Enter The Contract Address of the Token You Want to Buy")
+    # 假设这是等待输入购买代币地址的状态
+    await state.set_state(Form.waiting_for_contrace_address)
+
+    # 目前不需要绑定私钥    
+    # if userData.get("default_private_key") == "":
+        # await message.edit_text("Please set your wallet first", reply_markup=go_back_trade)
+        
 
 
 async def search_positon(message: Message, state: FSMContext) -> None:
